@@ -240,3 +240,84 @@ h2 {
     max-width: 1140px;
     margin: 0 auto;
 }
+
+/* FEATURE */
+
+.feature {
+    display: grid;
+    justify-content: center;
+    padding: 2rem;
+    gap: 0rem 10rem;
+}
+.feature__text {
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+.feature .btn {
+    padding: 1.2rem 3rem;
+}
+
+.feature__image > img {
+    width: 100%;
+    height: auto;
+}
+.feature__image {
+    width: 90%;
+    justify-self: flex-end;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .feature {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .charge .feature__image {
+        order: 1;
+    }
+    .feature__image {
+        width: 100%;
+        order: 2;
+        margin-bottom: 0;
+    }
+    .feature__detail {
+        order: 1;
+    }
+    .feature__image > img {
+        width: 100%;
+    }
+}
+
+/* Contacts-us */
+
+.contact-us {
+    display: grid;
+    justify-content: center;
+    gap: 3rem 4rem;
+}
+
+.contact-us__map {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .contact-us {
+        grid-template-areas:
+            "address form"
+            "map form"
+            "icons form";
+        grid-template-columns: 70fr 30fr;
+    }
+    .contact-us__form {
+        grid-area: form;
+    }
+    .contact-us__map {
+        grid-area: map;
+        display: block;
+    }
+    .contact-us__icons {
+        grid-area: address;
+    }
+    .contact-us__social {
+        grid-area: icons;
+    }
+}
